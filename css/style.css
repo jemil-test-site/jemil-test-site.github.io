@@ -1,0 +1,755 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+body {
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section {
+  margin: 0 auto;
+  width: 100%;
+}
+/* HEADER NAVIGATION */
+
+.header {
+  margin-top: 24px;
+  padding: 0 40px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 1059px) {
+  .header-nav_hidden { 
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .header {
+    padding: 0 5%;
+  }
+}
+
+.header-nav__link {
+  padding: 0 25px;
+  position: relative;
+}
+
+.header-nav__link_active {
+  color: #E51937;
+}
+
+.header-nav__btn {
+  margin-right: 25px;
+}
+
+.header-nav__btn:hover:after,
+.header-nav__link:hover:after,
+.header-nav__link_active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 65px;
+  height: 2px;
+  background-color: #E51937;
+  position: absolute;
+  left: 25px;
+  top: 21px;
+  border-bottom-left-radius:  10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header-nav__button {
+  justify-self: right;
+}
+
+/* CAR INFO FIRST SECTION */
+
+.top-info__text {
+  text-align: center;
+  margin-top: 4%;
+  width: 100%;
+}
+
+.top-info__image {
+  margin: 0 auto;
+  padding-top: 15px;
+  text-align: center;
+  width: 100%;
+  background-image: url("../img/Tesla-Wordmark-Red.svg");
+  background-size: cover;
+  background-position: 20% 85%;
+  background-position-x: center;
+}
+
+.top-info__title {
+  font-weight: 600;
+  font-size: 5.625rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 411px) {
+  .top-info__title {
+    font-size: 3.125rem;
+  }
+  
+}
+
+.top-info__subtitle {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+
+/* TOP-SECTION CAR STATS */
+
+.top-info__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  grid-template-rows: auto;
+  grid-column-gap: 10%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 300px;
+}
+
+
+.top-info__speed_container,
+.top-info__range_container {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1px;
+  justify-content: center;
+}
+
+
+.top-info__speed-text {
+  float: right;
+  font-size: 2.185rem;
+  font-weight: 600;
+}
+
+.top-info__speed {
+  height: 40px;
+  margin: 5px;
+}
+
+.top-info__seconds {
+  font-size: 1.25rem;
+}
+
+.top-info__subtext {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 630px) {
+.top-info__seconds {
+    font-size: 0.925rem;
+  }
+
+  .top-info__subtext {
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  .top-info__speed-text {
+    font-size: 1.6875rem;
+  }
+}
+.top-info__order {
+  grid-row: 1;
+  font-size: 0.925rem;
+  border: 2px solid #E51937;
+  text-transform: uppercase;
+  width: 160px;
+  height: 40px;
+  color: #E51937;
+  font-weight: 700;
+  transition: background .1s linear, color .1s linear;
+}
+
+.top-info__order:hover {
+  color: #fff;
+  background-color: #E51937;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .top-info__order {
+    background: #E51937;
+    color: #fff;
+    
+  }
+}
+
+.top-info__test-drive {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.top-info__drive_red {
+  display: none;
+}
+
+.top-info__test-drive:hover
+.top-info__drive_red {
+  display: inherit;
+  z-index: 3;
+}
+
+.top-info__test-drive:hover
+.top-info__drive_black {
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
+  .top-info__drive_red {
+    display: inherit;
+  }
+
+  .top-info__drive_black {
+    display: none;
+  }
+
+  .top-info__drive {
+    color: #E51937;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .top-info__nav {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(120px, auto);
+    grid-column-gap: 0;
+    margin: 0 auto;
+  }
+
+  .top-info__speed_container {
+    grid-column: 1;
+  }
+  .top-info__range_container {
+    grid-column: 2;
+  }
+  .top-info__test-drive {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .top-info__order {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+.top-info__more-button {
+text-align: center;
+padding-top: 35px;
+}
+
+/* section 2 */ 
+
+.md-info {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  width: 100%;
+  min-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .md-info {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 500px auto auto;
+  }
+}
+
+.md-info__image-box {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/2013-tesla-model-s-cockpit.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+
+
+.md-info__image-box img {
+  display: block;
+}
+
+@media screen and (max-width:768px) {
+  .md-info__image-box {
+    grid-column: 1 / 3;
+    grid-row: span 1;
+    background-size: cover;
+    background-position: 25% 90%;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .md-info__image-box {
+    grid-column: span 2;
+    grid-row: 1;
+    background-size: cover;
+    background-position: 25% 100%;
+  }
+}
+
+
+.md-info__subtitle {
+  padding-left: 80px;
+  padding-top: 65px;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 85px;
+  color: #E51937;
+}
+
+@media screen and (max-width:768px) {
+  .md-info__subtitle {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 60px;
+    text-align: end;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .md-info__subtitle {
+    display: none;
+  }
+}
+
+.md-info-box {
+  background-color: #E51937;
+}
+
+.md-info__about {
+  grid-column: 2 ;
+  grid-row: 1;
+}
+
+@media screen and (max-width:768px) {
+  .md-info__about {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media screen and (max-width:478px) {
+  .md-info__about {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+}
+
+.info-box__title {
+  background-color: #E51937;
+  margin: 10% 0 0 10%;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 37px;
+  color: #fff;
+}
+
+.info-box__text {
+  margin: 11px 15% 10% 10%;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #fff;
+}
+
+.md-info__features {
+  grid-column: 2 ;
+  grid-row: 2;
+  padding-bottom: 170px;
+}
+
+@media screen and (max-width:768px) {
+  .md-info__features {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media screen and (max-width:478px) {
+  .md-info__features {
+    display: none;
+  }
+}
+
+.info-box__item {
+  display: flex;
+  margin-left: 12%;
+  margin-bottom: 45px;
+  overflow-wrap: break-word;
+}
+
+
+@media screen and (max-width:768px) {
+  .info-box__item {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+
+
+.info-box__item img {
+  margin-right: 5%;
+  align-self: center;
+}
+
+.info-box__item-name {
+  color: #fff;
+  
+}
+.info-box__item-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.info-box__item-title b {
+  font-size: 35px;
+  line-height: 34px;
+}
+.info-box__item__text {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.info-box__buttons {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+@media screen and (min-width:769px) and (max-width:994px) {
+  .md-box__btn:first-child {
+  padding-bottom: 10%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .info-box__buttons{
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+}
+
+@media screen and (max-width:478px) {
+  .info-box__buttons{
+    display: none;
+  }
+}
+
+.md-box__btn {
+  
+}
+
+.button--transparent {
+  font-size: 0.925rem;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 30px;
+  transition: background .1s linear, color .1s linear;
+}
+
+.button--transparent:hover {
+  background: #fff;
+  color: #E51937;
+}
+/* section 3 */ 
+
+.box-bg {
+  background-color: #E51937;
+}
+
+.bottom-info {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(5, auto);
+}
+
+@media screen and (max-width:768px) {
+  .bottom-info {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+  }
+}
+
+.bt-info-box__text-box {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 15%;
+}
+
+@media screen and (max-width:768px) {
+  .bt-info-box__text-box {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .bt-info-box__text-box {
+    grid-column: span 2;
+  }
+}
+
+.bt-info-box__title {
+  margin-bottom: 12px;
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.bt-info-box__text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #fff;
+}
+
+.bt-info-box__items {
+  padding-left: 10%;
+  padding-bottom: 100px;
+  padding-right: 20%;
+  grid-column: 1;
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media screen and (max-width:768px) {
+  .bt-info-box__items {
+    grid-column: 2;
+    grid-row: 2;
+    padding-top: 51px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .bt-info-box__items {
+    display: none;
+  }
+}
+
+.item-list__title {
+  padding-bottom: 30px;
+
+}
+
+.bottom-info-box__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info-box__item-text {
+  font-size: 17px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.info-box__item-text span {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: .7;
+}
+
+.bt-info-box__buttons {
+  grid-column: 1;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 60px;
+}
+
+@media screen and (max-width:768px) {
+  .bt-info-box__buttons {
+    grid-column: span 2;
+    grid-row: 3;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .bt-info-box__buttons {
+    display: none;
+  }
+}
+
+.bottom-image-box {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  background: url("/img/Model\ S.png");
+  background-size: 70% auto;
+  background-repeat: no-repeat;
+  background-position: 100% 15%;
+}
+
+
+@media screen and (max-width:768px) {
+  .bottom-image-box {
+    grid-column: span 2;
+    grid-row: 1;
+    background-size: 80%;
+    background-position: 50% 15%;
+  }
+}
+
+.bottom-image-box img {
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 100px;
+  right: 100px;
+}
+
+
+@media screen and (max-width:768px) {
+  .bottom-image-box img {
+    padding: 5% 0;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .bottom-image-box img {
+    padding: 10% 0;
+  }
+}
+
+.bottom-image-box img {
+  width: 100%;
+}
+
+.bt-info-box__rating {
+  grid-column: 1;
+  padding-bottom: 10%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-info-box__rating img {
+  margin-right: 10%;
+}
+
+.bt__item-name {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.bt__item-text {
+  font-size: 25px;
+}
+
+@media screen and (max-width:768px) {
+  .bt-info-box__rating {
+    display: none;
+  }
+}
+
+.bt-order-button {
+  padding: 10px 30px;
+}
+
+button.about-button {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.about-button:hover .i-icon {
+  background: #fff;
+  color: #E51937;
+  transition: background .1s linear, color .1s linear;
+}
+
+.i-icon {
+  margin-right: 5px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #fff;
+  border-radius: 11px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 22px;
+}
+
+@media screen and (min-width:768px) and (max-width: 900px) {
+  .i-icon {
+    display: none;
+  }
+}
+
+.about-btn__text  {
+  text-transform: uppercase;
+  color: #fff;
+}
